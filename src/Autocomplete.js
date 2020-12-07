@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {cities} from './Cities.js';
-
+import moment from "moment";
 import {useState} from 'react'
 
 const GetCityItem =(props) =>{
@@ -10,8 +10,8 @@ const GetCityItem =(props) =>{
 
     const WeatherApplication = (event) => {
 
-        console.log(cities.find(x => x.city ===event.target.value.toString()).Longitude)
-        console.log(cities.find(x => x.city ===event.target.value.toString()).Latitude)
+      //  console.log(cities.find(x => x.city ===event.target.value.toString()).Longitude)
+       // console.log(cities.find(x => x.city ===event.target.value.toString()).Latitude)
         
       
 
@@ -38,13 +38,17 @@ const GetCityItem =(props) =>{
  <table>
         {weather.timeSeries!=null && weather.timeSeries.map(x => <tr><td>{x.parameters.find(x => x.name === "t").values}</td></tr> )}
         </table>
+           {weather!=null &&  'Current temp: ' + weather.timeSeries[0].parameters.find(x => x.name === "t").values}
        
 */
     return(
         <React.Fragment>
         <input type="submit" style={{color:'transparent'}} value="" className="search-btn" onClick={WeatherApplication} value={props.userinput}/>
        <br/>
-       <div className="outputTemp" style={{backgroundColor:'white'}}> {weather!=null &&  'Current temp: ' + weather.timeSeries[0].parameters.find(x => x.name === "t").values}</div>
+       <div className="outputTemp form-control" style={{backgroundColor:'white'}}> 
+       {weather!=null && weather.timeSeries.map(x=> <React.Fragment><span>Time: {moment(x.validTime).format("HH")} Temperature:  {x.parameters[1].values} </span><br/></React.Fragment>)}
+    
+       </div>
        </React.Fragment>
     )
 }
@@ -154,7 +158,7 @@ export class Autocomplete extends Component {
         <div className="search">
           <input
             type="text"
-            className="search-box"
+            className="search-box form-control"
             onChange={onChange}
             onKeyDown={onKeyDown}
             value={userInput}
