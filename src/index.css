@@ -9,11 +9,12 @@ body {
   background: white;
 }
 .search {
-  width: 30rem;
+  width:90%;
+  
   margin: 0px auto;
   
   
-  position: relative;
+  position: absolute;
 }
 .search-box {
  
@@ -21,6 +22,12 @@ body {
   width: 100%;
   padding: 1rem;
   
+}
+
+.buttonsearch{
+position: relative;
+top:-38px;
+float:right;
 }
 
 .outputTemp{
@@ -38,7 +45,7 @@ body {
   height: 50%;
   width: 4em;
   margin-top: -2em;
-  position: absolute;
+  position: relative;
   top: 50%;
   right: 0.5rem;
 
@@ -59,13 +66,16 @@ body {
   opacity: 0.6;
 }
 
+
 ul.options {
+  margin-top:35px;
   display: block;
   list-style: none;
-  width: 30rem;
+  width:90%;
+  
   transition: width 0.3s;
-  margin: 0px auto;
-  padding:40px auto;
+  
+  
   position: absolute;
   background-color: white;
 }

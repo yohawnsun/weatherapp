@@ -39,11 +39,13 @@ const GetCityItem =(props) =>{
         {weather.timeSeries!=null && weather.timeSeries.map(x => <tr><td>{x.parameters.find(x => x.name === "t").values}</td></tr> )}
         </table>
            {weather!=null &&  'Current temp: ' + weather.timeSeries[0].parameters.find(x => x.name === "t").values}
+            <input type="submit" style={{color:'transparent'}} value="" className="search-btn" onClick={WeatherApplication} value={props.userinput}/>
        
 */
     return(
         <React.Fragment>
-        <input type="submit" style={{color:'transparent'}} value="" className="search-btn" onClick={WeatherApplication} value={props.userinput}/>
+               <button class="btn btn-dark buttonsearch" onClick={WeatherApplication} value={props.userinput}>Search</button>
+       
        <br/>
        <div className="outputTemp form-control" style={{backgroundColor:'white'}}> 
        {weather!=null && weather.timeSeries.map(x=> <React.Fragment><span>Time: {moment(x.validTime).format("HH")} Temperature:  {x.parameters[1].values} </span><br/></React.Fragment>)}
