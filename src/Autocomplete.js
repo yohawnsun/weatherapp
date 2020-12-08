@@ -50,7 +50,7 @@ const GetCityItem =(props) =>{
        <br/>
        <div className="outputTemp form-control" style={{backgroundColor:'white'}}> 
        {weather!=null && weather.timeSeries.map(x=> <React.Fragment><span>{moment(x.validTime).format("dddd")} ({moment(x.validTime).format("HH")}) {x.parameters.map(y => y.name==="t" && "Temp:"+ y.values +" ")} 
-    {x.parameters.map(y => y.name==="Wsymb2" && "Weather: "+ weathersymbols[y.values])}</span><br/></React.Fragment>)}
+    {x.parameters.map(y => y.name==="Wsymb2" && weathersymbols[y.values])}</span><br/></React.Fragment>)}
     
        </div>
        </React.Fragment>
