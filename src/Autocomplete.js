@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {cities} from './Cities.js';
+import {weathersymbols} from './weathersymbols';
 import moment from "moment";
 import {useState} from 'react'
 
@@ -48,7 +49,8 @@ const GetCityItem =(props) =>{
        
        <br/>
        <div className="outputTemp form-control" style={{backgroundColor:'white'}}> 
-       {weather!=null && weather.timeSeries.map(x=> <React.Fragment><span>Time: {moment(x.validTime).format("HH")} Temperature:  {x.parameters[1].values} </span><br/></React.Fragment>)}
+       {weather!=null && weather.timeSeries.map(x=> <React.Fragment><span>{moment(x.validTime).format("dddd")} ({moment(x.validTime).format("HH")}) {x.parameters.map(y => y.name==="t" && "Temp:"+ y.values +" ")} 
+    {x.parameters.map(y => y.name==="Wsymb2" && "Weather: "+ weathersymbols[y.values])}</span><br/></React.Fragment>)}
     
        </div>
        </React.Fragment>

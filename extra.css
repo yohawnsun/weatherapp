@@ -2,7 +2,7 @@
   margin:0px auto;
   align-items: center;
   text-align: left;
-  align-content: center;
+  align-content: left;
 }
 
 body {
@@ -32,7 +32,7 @@ float:right;
 
 .outputTemp{
   margin: 0px auto;
-  font-size:20px;
+  font-size:14px;
   
   border:0px;
   
@@ -97,9 +97,9 @@ ul.options li:hover {
 }
 
 ul.options li.option-active {
-  background: whitesmoke;
+  background: black;
   font-size: 1.5rem;
-  color: #00b4cc;
+  color: white;
 }
 .no-options {
   color: white;
