@@ -5,13 +5,16 @@
   align-content: left;
 }
 
+h1{
+  margin-left: 20px;
+}
 body {
   background: white;
 }
 .search {
   width:90%;
-  
-  margin: 0px auto;
+  margin-left: 20px;
+
   
   
   position: absolute;

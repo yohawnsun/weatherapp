@@ -1,3 +1,11 @@
+.weekday{
+margin-top:10px;
+font-weight: bold;
+}
+
+h1{
+  margin-left: 20px;
+}
 #root, .root{
   margin:0px auto;
   align-items: center;
@@ -11,7 +19,7 @@ body {
 .search {
   width:90%;
   
-  margin: 0px auto;
+  margin-left: 20px;
   
   
   position: absolute;
