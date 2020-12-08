@@ -64,7 +64,7 @@ const PrintDay = (day,time) => {
        <div className="outputTemp form-control" style={{backgroundColor:'white'}}> 
         {weather!=null && <p className="weekday">Today</p>}
        {weather!=null &&   weather.timeSeries.map(x=> <React.Fragment><span>{ PrintDay(moment(x.validTime).format("dddd"),moment(x.validTime).format("HH")) && <p className="weekday">  {moment(x.validTime).format("dddd")} </p>  } ({moment(x.validTime).format("HH")}) {x.parameters.map(y => y.name==="t" && y.values +"°C ")} 
-    {x.parameters.map(y => y.name==="Wsymb2" && weathersymbols[y.values])}</span><br/></React.Fragment>)}
+    {x.parameters.map(y => y.name==="Wsymb2" && weathersymbols[y.values-1])}</span><br/></React.Fragment>)}
     
        </div>
        </React.Fragment>

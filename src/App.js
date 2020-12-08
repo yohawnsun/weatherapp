@@ -20,8 +20,7 @@ import Autocomplete from './Autocomplete';
     fetch("https://wft-geo-db.p.rapidapi.com/v1/geo/cities/Q26040", {
       "method": "GET",
       "headers": {
-        "x-rapidapi-key": "ec3117aec2mshee7aab20964ef78p1d89ebjsn5145d6c3660e",
-        "x-rapidapi-host": "wft-geo-db.p.rapidapi.com"
+       
       }
     })
     .then(response => {
